@@ -21,6 +21,8 @@ class ImportCategoryUseCase {
           description
         });
       }).on("end", () => {
+        //remove file
+        fs.promises.unlink(file.path);
         resolve(categories)
       }).on("error", (err) => {
         reject(err);
