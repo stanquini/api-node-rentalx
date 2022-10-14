@@ -1,18 +1,26 @@
-import { Column, CreateDateColumn, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
-import { v4 as uuidV4 } from 'uuid';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryColumn
+} from "typeorm";
+import { v4 as uuidV4 } from "uuid";
+
 import { Category } from "./Category";
 
+@Entity("cars")
 class Car {
-  
   @PrimaryColumn()
   id: string;
-  
+
   @Column()
   name: string;
-  
+
   @Column()
   description: string;
-  
+
   @Column()
   daily_rate: number;
 
@@ -24,7 +32,7 @@ class Car {
 
   @Column()
   fine_amount: number;
-  
+
   @Column()
   brand: string;
 
